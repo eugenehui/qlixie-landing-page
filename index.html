@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qlixie — One Key. Endless Ways to Make It Thock.</title>
+  <meta name="description"
+    content="Qlixie is a pocket-sized mechanical key you can fully customize — color, shape, sound, feel, effects, and more.">
+  
+    <!-- Standard Favicon for Modern Browsers -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- SVG Favicon (Scales crisp on Retina / 4K displays) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Apple Touch Icon (iOS Safari Bookmarks & Home Screen) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Optional Safari Pinned Tab Color -->
+  <meta name="theme-color" content="#FBF6EF">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const words = ["thock", "click", "clack", "tap"];
+    let index = 0;
+    const flipEl = document.getElementById("flip-word");
+
+    if (!flipEl) return;
+
+    setInterval(() => {
+      flipEl.classList.add("flip-out");
+      
+      setTimeout(() => {
+        index = (index + 1) % words.length;
+        flipEl.textContent = words[index];
+        flipEl.classList.remove("flip-out");
+        flipEl.classList.add("flip-in");
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            flipEl.classList.remove("flip-in");
+          });
+        });
+      }, 250);
+    }, 2200);
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const videos = document.querySelectorAll("video");
+    
+    videos.forEach(video => {
+      video.muted = true; // Programmatically enforce muted state
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "");
+      
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.log("Autoplay prevented:", error);
+        });
+      }
+    });
+  });
+</script>
+
+
+<body>
+
+  <header class="hero-section">
+    <div class="hero">
+      <div class="hero-content">
+        <img src="qlixieLogoDark.png" alt="qlixie logo" width="200" class="header-logo">
+        <h1>One key.<br>Endless ways to make it <span class="word-flip-wrap"><span id="flip-word" class="word-flip">thock</span></span>.</h1>
+        <p class="subhead">A pocket-sized companion with a mechanical-keyboard soul. Pick the color, the shape, the sound, the
+          feel — then tap away.</p>
+        <div class="cta-row">
+          <a class="button" href="#" aria-label="Download Qlixie on the App Store">Download on the App Store</a>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <div class="phone-frame">
+          <video class="phone-video" autoplay muted loop playsinline webkit-playsinline poster="phone-poster.jpg">
+            <source src="qlixie_Hero.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="features">
+    <h2 class="features-intro">Your canvas to craft a sensory experience uniquely yours.</h2>
+    <p class="features-subhead">Have complete custom control over sound, sight, and feel.</p>
+
+    <div class="tile-grid">
+
+      <div class="tile">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+            viewBox="0 0 256 256">
+            <path
+              d="M232,32a8,8,0,0,0-8-8c-44.08,0-89.31,49.71-114.43,82.63A60,60,0,0,0,32,164c0,30.88-19.54,44.73-20.47,45.37A8,8,0,0,0,16,224H92a60,60,0,0,0,57.37-77.57C182.3,121.31,232,76.08,232,32ZM92,208H34.63C41.38,198.41,48,183.92,48,164a44,44,0,1,1,44,44Zm32.42-94.45q5.14-6.66,10.09-12.55A76.23,76.23,0,0,1,155,121.49q-5.9,4.94-12.55,10.09A60.54,60.54,0,0,0,124.42,113.55Zm42.7-2.68a92.57,92.57,0,0,0-22-22c31.78-34.53,55.75-45,69.9-47.91C212.17,55.12,201.65,79.09,167.12,110.87Z">
+            </path>
+          </svg>
+          Color
+        </h3>
+        <p>Select from an expansive palette, from classic black to the exact shade you're picturing right now.</p>
+      </div>
+
+      <div class="tile">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M71.59,61.47a8,8,0,0,0-15.18,0l-40,120A8,8,0,0,0,24,192h80a8,8,0,0,0,7.59-10.53ZM35.1,176,64,89.3,92.9,176ZM208,76a52,52,0,1,0-52,52A52.06,52.06,0,0,0,208,76Zm-88,0a36,36,0,1,1,36,36A36,36,0,0,1,120,76Zm104,68H136a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8h88a8,8,0,0,0,8-8V152A8,8,0,0,0,224,144Zm-8,56H144V160h72Z">
+            </path>
+          </svg>
+          Shape & Size
+        </h3>
+        <p>Six keycap profiles — standard, rounded, or pillow — pick the one that feels right under your thumb.
+        </p>
+      </div>
+
+      <div class="tile">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M87.24,52.59a8,8,0,0,0-14.48,0l-64,136a8,8,0,1,0,14.48,6.81L39.9,160h80.2l16.66,35.4a8,8,0,1,0,14.48-6.81ZM47.43,144,80,74.79,112.57,144ZM200,96c-12.76,0-22.73,3.47-29.63,10.32a8,8,0,0,0,11.26,11.36c3.8-3.77,10-5.68,18.37-5.68,13.23,0,24,9,24,20v3.22A42.76,42.76,0,0,0,200,128c-22.06,0-40,16.15-40,36s17.94,36,40,36a42.73,42.73,0,0,0,24-7.25,8,8,0,0,0,16-.75V132C240,112.15,222.06,96,200,96Zm0,88c-13.23,0-24-9-24-20s10.77-20,24-20,24,9,24,20S213.23,184,200,184Z">
+            </path>
+          </svg>
+          Legend
+        </h3>
+        <p>Add a letter, an emoji, or your own photo, in any of over a dozen fonts.</p>
+      </div>
+
+      <div class="tile">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M56,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM88,24a8,8,0,0,0-8,8V224a8,8,0,0,0,16,0V32A8,8,0,0,0,88,24Zm40,32a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Zm40,32a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,168,88Zm40-16a8,8,0,0,0-8,8v96a8,8,0,0,0,16,0V80A8,8,0,0,0,208,72Z">
+            </path>
+          </svg>
+          Sound
+        </h3>
+        <p>Thocky, clicky, creamy, clacky — real satisfying mechanical-keyboard sound profiles, or record your own.</p>
+      </div>
+
+      <div class="tile">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M160,32H96A24,24,0,0,0,72,56V200a24,24,0,0,0,24,24h64a24,24,0,0,0,24-24V56A24,24,0,0,0,160,32Zm8,168a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8h64a8,8,0,0,1,8,8ZM216,88v80a8,8,0,0,1-16,0V88a8,8,0,0,1,16,0Zm32,16v48a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0ZM56,88v80a8,8,0,0,1-16,0V88a8,8,0,0,1,16,0ZM24,104v48a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z">
+            </path>
+          </svg>
+          Feel
+        </h3>
+        <p>Six haptic feels, from barely-there to deeply satisfying, so every tap feels exactly right.</p>
+      </div>
+
+      <div class="tile">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z">
+            </path>
+          </svg>
+          Tap effects
+        </h3>
+        <p>Watch text float up, rings radiate outward, or the whole screen light up with fireworks.</p>
+      </div>
+
+      <div class="tile">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M241.75,51.32a15.88,15.88,0,0,0-13.86-2.77l-3.48.94C205.61,54.56,170.61,64,128,64S50.39,54.56,31.59,49.49l-3.48-.94A16,16,0,0,0,8,64V192a16,16,0,0,0,16,16,16.22,16.22,0,0,0,4.18-.55l3.18-.86C50.13,201.49,85.17,192,128,192s77.87,9.49,96.69,14.59l3.18.86A16,16,0,0,0,248,192V64A15.9,15.9,0,0,0,241.75,51.32ZM27.42,64.93C46.94,70.2,83.27,80,128,80s81.06-9.8,100.58-15.07L232,64V182.76l-58.07-58.07a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L24,141.37V64ZM213.84,187.21a391.22,391.22,0,0,0-49-9L142.63,156l20-20ZM27.13,191.14,24,192V164l52-52,64.25,64.25q-6-.24-12.25-.25C83,176,45.28,186.23,27.13,191.14ZM192,108a12,12,0,1,1,12,12A12,12,0,0,1,192,108Z">
+            </path>
+          </svg>
+          Wallpaper
+        </h3>
+        <p>Set the scene behind your key with a color or a croppable image of your own.</p>
+      </div>
+
+      <div class="tile">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M216,40H72A16,16,0,0,0,56,56V72H40A16,16,0,0,0,24,88V200a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V184h16a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM72,56H216v62.75l-10.07-10.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L72,109.37ZM184,200H40V88H56v80a16,16,0,0,0,16,16H184Zm32-32H72V132l36-36,49.66,49.66a8,8,0,0,0,11.31,0L194.63,120,216,141.38V168ZM160,84a12,12,0,1,1,12,12A12,12,0,0,1,160,84Z">
+            </path>
+          </svg>
+          Themes
+        </h3>
+        <p>Save your favorite combinations and switch between them whenever the mood strikes.</p>
+      </div>
+
+    </div>
+
+<!-- Secondary Features Block -->
+    <div class="secondary-features">
+      <div class="secondary-header">
+        <span class="secondary-tag">Beyond Customization</span>
+        <h2 class="secondary-title">Built for play, progress, and pure delight.</h2>
+      </div>
+
+      <div class="secondary-grid">
+
+        <div class="sec-tile">
+          <h4>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+              <path
+                d="M237.66,141.66l-32,32a8,8,0,0,1-11.32-11.32L212.69,144H123.31l-56,56H96a8,8,0,0,1,0,16H48a8,8,0,0,1-8-8V160a8,8,0,0,1,16,0v28.69l56-56V43.31L93.66,61.66A8,8,0,0,1,82.34,50.34l32-32a8,8,0,0,1,11.32,0l32,32a8,8,0,0,1-11.32,11.32L128,43.31V128h84.69l-18.35-18.34a8,8,0,0,1,11.32-11.32l32,32A8,8,0,0,1,237.66,141.66Z">
+              </path>
+            </svg>
+            3D Rotatable Keycap
+          </h4>
+          <p>Spin, tilt, and admire your custom key from every angle with fluid 360° touch rotation. Tap for an animated plunge.</p>
+        </div>
+
+        <div class="sec-tile">
+          <h4>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+              <path
+                d="M232,64H208V48a8,8,0,0,0-8-8H56a8,8,0,0,0-8,8V64H24A16,16,0,0,0,8,80V96a40,40,0,0,0,40,40h3.65A80.13,80.13,0,0,0,120,191.61V216H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V191.58c31.94-3.23,58.44-25.64,68.08-55.58H208a40,40,0,0,0,40-40V80A16,16,0,0,0,232,64ZM48,120A24,24,0,0,1,24,96V80H48v32q0,4,.39,8Zm144-8.9c0,35.52-29,64.64-64,64.9a64,64,0,0,1-64-64V56H192ZM232,96a24,24,0,0,1-24,24h-.5a81.81,81.81,0,0,0,.5-8.9V80h24Z">
+              </path>
+            </svg>
+            Tap Milestones
+          </h4>
+          <p>Watch your live tap counter climb and unlock celebration effects at 100, 1,000, and beyond.</p>
+        </div>
+
+        <div class="sec-tile">
+          <h4>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+              <path
+                d="M183.89,153.34a57.6,57.6,0,0,1-46.56,46.55A8.75,8.75,0,0,1,136,200a8,8,0,0,1-1.32-15.89c16.57-2.79,30.63-16.85,33.44-33.45a8,8,0,0,1,15.78,2.68ZM216,144a88,88,0,0,1-176,0c0-27.92,11-56.47,32.66-84.85a8,8,0,0,1,11.93-.89l24.12,23.41,22-60.41a8,8,0,0,1,12.63-3.41C165.21,36,216,84.55,216,144Zm-16,0c0-46.09-35.79-85.92-58.21-106.33L119.52,98.74a8,8,0,0,1-13.09,3L80.06,76.16C64.09,99.21,56,122,56,144a72,72,0,0,0,144,0Z">
+              </path>
+            </svg>
+            Stats & Streaks
+          </h4>
+          <p>Track your tap history over time and build your daily streak.</p>
+        </div>
+
+        <div class="sec-tile">
+          <h4>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+              <path
+                d="M168,112a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,112Zm-8,24H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Zm72-8A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z">
+              </path>
+            </svg>
+            Tap Commentary
+          </h4>
+          <p>Keep tapping to trigger cheeky observations, witty quips, and surprise screen pop-ups as you hit new strides.</p>
+        </div>
+
+        <div class="sec-tile">
+          <h4>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM80,84A12,12,0,1,1,68,72,12,12,0,0,1,80,84Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,120,84Z"></path></svg>
+            Clean, Native Design
+          </h4>
+          <p>A clutter-free, iOS-native interface crafted to feel smooth, intuitive, and effortlessly polished from your very first tap.</p>
+        </div>
+
+        <div class="sec-tile">
+          <h4>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M176,56H80a72,72,0,0,0,0,144h96a72,72,0,0,0,0-144Zm0,128H80A56,56,0,0,1,80,72h96a56,56,0,0,1,0,112ZM80,88a40,40,0,1,0,40,40A40,40,0,0,0,80,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,80,152Z"></path></svg>
+            Pure Focus Mode
+          </h4>
+          <p>Toggle off effects, milestones, stats, and pop-ups whenever you want a quiet, distraction-free ASMR space.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+<!-- Keyboard Mode Section (Phone Left, Text Right on Desktop; Text Top, Video Bottom on Mobile) -->
+  <section class="keyboard-mode-section">
+    <div class="keyboard-mode-container">
+
+      <!-- Media Block (First in HTML so it comes second on mobile stack) -->
+      <div class="keyboard-media">
+        <div class="phone-frame">
+          <video class="phone-video" autoplay muted loop playsinline webkit-playsinline poster="keyboard-poster.jpg">
+            <source src="qlixie_Keyboard.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- Content Block (Second in HTML so it comes first on mobile stack) -->
+      <div class="keyboard-content">
+        <span class="secondary-tag">Mini Keyboard Mode</span>
+        <h2>From satisfying taps<br>to tactile typing.</h2>
+        <p class="subhead">
+          Flip seamlessly from your single fidget key to a mini keyboard. Type out words, 
+          watch the letters appear briefly on screen, and enjoy pure, tactile typing.
+        </p>
+        
+        <ul class="keyboard-bullets">
+          <li><strong>Instant Flip:</strong> Switch between single-key focus mode and the mini keyboard with a tap.</li>
+          <li><strong>Typing Effects:</strong> Watch your words scroll across the screen or zoom in and out, accompanied by your custom tap effects.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Closing CTA Section (Deep Orange Gradient - Refactored without Video) -->
+  <section class="closing-cta">
+    <div class="closing-cta-content">
+      <h2>Satisfying taps. Anywhere, anytime.</h2>
+
+      <div class="use-case-grid">
+        <div class="use-case-card">
+          <span class="use-case-icon">⌨️</span>
+          <p><strong>Love mechanical keyboards?</strong> Take your favorite part with you.</p>
+        </div>
+        <div class="use-case-card">
+          <span class="use-case-icon">👇</span>
+          <p><strong>Got fidgety fingers?</strong> Give them a keycap.</p>
+        </div>
+        <div class="use-case-card">
+          <span class="use-case-icon">🎧</span>
+          <p><strong>Need a little click therapy?</strong> Tap into some satisfying ASMR.</p>
+        </div>
+        <div class="use-case-card">
+          <span class="use-case-icon">☕</span>
+          <p><strong>Feeling frazzled?</strong> Take five. Or take fifty taps.</p>
+        </div>
+        <div class="use-case-card">
+          <span class="use-case-icon">⚡</span>
+          <p><strong>Bored?</strong> There's a button for that.</p>
+        </div>
+        <div class="use-case-card">
+          <span class="use-case-icon">🎨</span>
+          <p><strong>Make it weird.</strong> Or artistic. Customize your Qlixie environment exactly how you like it.</p>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="button button-inverse" href="#" aria-label="Download Qlixie on the App Store">Download on the App Store</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Device Requirements Bar -->
+  <section class="specs-bar">
+    <div class="specs-container">
+      <div class="spec-item">
+        <span class="spec-label">Compatibility</span>
+        <span class="spec-value">iPhone Only (iOS 18.6+)</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">Haptics</span>
+        <span class="spec-value">Optimized for Taptic Engine</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">Connectivity</span>
+        <span class="spec-value">100% Offline Ready</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">Privacy</span>
+        <span class="spec-value">Zero Data Collected</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="faq-container">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            Is this a one-time purchase or a subscription?
+          </summary>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p>One unlock gives you full access to all colors, shapes, sounds, haptics, and features listed above. No
+                subscriptions, no surprise paywalls.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            Does Qlixie require an internet connection?
+          </summary>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p>Not at all. Qlixie works 100% offline, making it perfect for airplane mode, subways, or anywhere you
+                need a moment of focus without signal.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            Does using haptics and sound drain the battery?
+          </summary>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p>Qlixie is built natively with Swift to be ultra-lightweight and battery-efficient. It uses standard
+                iOS Taptic Engine impulses, which use minimal power—comparable to standard typing on your phone.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            Is Qlixie a system keyboard replacement?
+          </summary>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p>No, Qlixie is a standalone interactive key and sound environment app designed for fidgeting, ASMR, and
+                tactile satisfaction. It does not replace your system keyboard for typing messages in other apps.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            Do you track my taps or personal data?
+          </summary>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p>Never. Qlixie does not collect, store, or transmit any data. Everything happens entirely on your
+                device.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="qlixieLogoLight.png" alt="qlixie logo" width="200" class="header-logo">
+    <nav class="legal-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+    </nav>
+    <p class="contact">Questions? <a href="mailto:[YOUR EMAIL ADDRESS]">[YOUR EMAIL ADDRESS]</a></p>
+    <p class="copyright">© 2026 Sleepy Dog Studio. Qlixie is an independent app.</p>
+  </footer>
+
+</body>
+
+</html>
